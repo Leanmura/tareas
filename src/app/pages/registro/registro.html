@@ -1,8 +1,14 @@
-<!-- registro.component.html -->
+@if (authService.usuarioActual()) {
+<button (click)="cerrarSesion()">Log Out</button>
+}
+@else {
+<!-- CREAR CUENTA-->
 <div class="container">
     <h1>Crear cuenta</h1>
     <input type="text" placeholder="Nombre completo">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="password" placeholder="Contraseña">
-    <button>Registrarse</button>
+    <input type="email" placeholder="Correo electrónico" [formControl]="email">
+    <input type="password" placeholder="Contraseña" [formControl]="password">
+    <button (click)="crearCuenta()">Registrarse</button>
+    <button (click)="iniciarSesion()">iniciar sesion</button>
 </div>
+}
