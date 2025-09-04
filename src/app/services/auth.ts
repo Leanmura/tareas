@@ -39,3 +39,6 @@ export class Auth {
     this.supabase.auth.signOut();
   }
 }
+
+
+// DESUSCRIBIR EN EL ngOnDestroy ????????
